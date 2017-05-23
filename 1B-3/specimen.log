@@ -1,0 +1,19 @@
+(04/14/2017 19:09:55) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/14/2017 19:10:28) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/14/2017 19:10:35) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/14/2017 19:10:49) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/14/2017 19:12:19) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/14/2017 19:12:44) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/14/2017 19:13:03) Information [MPT Runtime] "Procedure Beginning: Rutz - Monotonic tension.000"
+(04/14/2017 19:13:03) Information [Stmgr] "Running test"
+(04/14/2017 19:13:03) Information [MPT Runtime] "Running"
+(04/14/2017 19:14:57) Information [MPT Runtime] "Entering Stopped"
+(04/14/2017 19:14:57) Information [Stmgr] "Stopped test"
+(04/14/2017 19:14:57) Information [MPT Runtime] "Stopped
+ Running Time:  00:01:53 
+ Channel Counters:
+    Ch 1 -          0  Cycles"
+(04/14/2017 19:31:08) Information [Stmgr] "Enable manual command failed: Ch 1 Displacement"
+(04/14/2017 19:31:12) Information [Stmgr] "Enable manual command failed: Ch 1 Displacement"
+(04/14/2017 19:31:16) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/14/2017 19:34:08) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"

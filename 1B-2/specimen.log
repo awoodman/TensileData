@@ -1,0 +1,12 @@
+(04/14/2017 12:15:42) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/14/2017 12:18:44) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/14/2017 12:19:31) Information [MPT Runtime] "Procedure Beginning: Rutz - Monotonic tension.000"
+(04/14/2017 12:19:31) Information [Stmgr] "Running test"
+(04/14/2017 12:19:31) Information [MPT Runtime] "Running"
+(04/14/2017 12:21:32) Information [MPT Runtime] "Entering Stopped"
+(04/14/2017 12:21:32) Information [Stmgr] "Stopped test"
+(04/14/2017 12:21:33) Information [MPT Runtime] "Stopped
+ Running Time:  00:02:01 
+ Channel Counters:
+    Ch 1 -          0  Cycles"
+(04/14/2017 12:23:19) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"

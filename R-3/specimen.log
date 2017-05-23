@@ -1,0 +1,9 @@
+(04/20/2017 10:40:35) Information [MPT Runtime] "Procedure Beginning: Rutz - Monotonic tension.000"
+(04/20/2017 10:40:35) Information [Stmgr] "Running test"
+(04/20/2017 10:40:35) Information [MPT Runtime] "Running"
+(04/20/2017 10:41:09) Information [MPT Runtime] "Entering Stopped"
+(04/20/2017 10:41:09) Information [Stmgr] "Stopped test"
+(04/20/2017 10:41:09) Information [MPT Runtime] "Stopped
+ Running Time:  00:00:34 
+ Channel Counters:
+    Ch 1 -          0  Cycles"

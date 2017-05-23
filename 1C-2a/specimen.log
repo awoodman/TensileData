@@ -1,0 +1,18 @@
+(04/14/2017 13:17:05) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/14/2017 13:22:59) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/14/2017 13:23:07) Information [MPT Runtime] "Procedure Beginning: Rutz - Monotonic tension.000"
+(04/14/2017 13:23:07) Information [Stmgr] "Running test"
+(04/14/2017 13:23:07) Information [MPT Runtime] "Running"
+(04/14/2017 13:24:56) Information [MPT Runtime] "Entering Stopped"
+(04/14/2017 13:24:56) Information [Stmgr] "Stopped test"
+(04/14/2017 13:24:57) Information [MPT Runtime] "Stopped
+ Running Time:  00:01:49 
+ Channel Counters:
+    Ch 1 -          0  Cycles"
+(04/14/2017 13:38:05) Information [Stmgr] "HPU T10-J25 -- No Pressure."
+(04/14/2017 13:38:05) Information [Stmgr] "HSM T9-J28A -- No Pressure."
+(04/14/2017 13:38:13) Information [Stmgr] "Saved Views: 'Default Views'."
+(04/14/2017 13:38:13) Information [Stmgr] "Station 20 kip frame.cfg is closed."
+(04/14/2017 13:38:13) Information [Basic TestWare] "Closed Test: Untitled test.tst"
+(04/14/2017 13:38:14) Information [Stmgr] "'Station Desktop Organizer' has disconnected from the station."
+(04/14/2017 13:38:15) Information [Stmgr] "'Basic TestWare' has disconnected from the station."

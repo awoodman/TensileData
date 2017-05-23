@@ -1,0 +1,20 @@
+(04/13/2017 13:38:32) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/13/2017 13:39:38) Information [Stmgr] "HPU T10-J25 -- High Pressure."
+(04/13/2017 13:39:43) Information [Stmgr] "HSM T9-J28A -- High Pressure."
+(04/13/2017 13:40:11) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/13/2017 13:43:51) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/13/2017 13:43:54) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/13/2017 13:43:55) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/13/2017 13:44:08) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/13/2017 13:46:06) Information [MPT Runtime] "Procedure Beginning: Rutz - Monotonic tension.000"
+(04/13/2017 13:46:06) Information [MPT Runtime] "Running"
+(04/13/2017 13:48:56) Information [MPT Runtime] "Entering Stopped"
+(04/13/2017 13:48:57) Information [MPT Runtime] "Stopped
+ Running Time:  00:02:50 
+ Channel Counters:
+    Ch 1 -          0  Cycles"
+(04/13/2017 14:19:18) Information [Stmgr] "Enable manual command failed: Ch 1 Displacement"
+(04/13/2017 14:19:21) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/13/2017 14:20:40) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/13/2017 14:28:36) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/13/2017 14:29:07) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"

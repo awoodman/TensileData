@@ -14,7 +14,7 @@ if exist('Plots') == 0
 end
 
 %% Find all folders starting with 'spec'
-dataFolderInfo = dir(strcat('spec','*'));
+dataFolderInfo = dir('*-*');
 
 % count of plots
 count = 0;
@@ -23,10 +23,6 @@ count = 0;
 for i = 1:size(dataFolderInfo)
     % Get folder name
     folder = dataFolderInfo(i).name;
-    
-    % Get the spec #
-    folderParts = strsplit(folder, 'c');
-    specNo = folderParts{2};
     
     % Go into folder
     cd(strcat('.\', folder));
@@ -71,7 +67,7 @@ for i = 1:size(dataFolderInfo)
         end    
 
         % Prints the status in the command window
-        disp(strcat('Spec', {' '}, specNo, ' Done...'));
+        disp(strcat(folder, ' done...'));
         
         % Close all open files (really just 1 open at a time)
         fclose('all');
@@ -82,8 +78,10 @@ for i = 1:size(dataFolderInfo)
 
         % Do the plotting
         f = figure; % New figure handle
-        plot(x,y);
-        title(strcat('Force vs. Time: Spec', {' '}, specNo));
+        plot(x,y/1000);
+        xlim([0 100]);
+        ylim([0 15]);
+        title(strcat('Test ',folder,' - Load vs. Time - Monotonic Tension'));
         xlabel('Time [s]');
         ylabel('Force [lbf]');
         
@@ -92,9 +90,9 @@ for i = 1:size(dataFolderInfo)
         
         % Save the figure in Plots folder then go back to base directory
         cd('.\..\Plots');
-        saveas(f, strcat('spec_',specNo,'_plot'), 'jpeg');
+        saveas(f, strcat('folder','_plot'), 'jpeg');
     else
-        disp(strcat('Spec', {' '}, specNo, ' has no data file...skipping...'));
+        disp(strcat(folder, ' has no data file...skipping...'));
     end
     
     % Go back to base directory

@@ -1,0 +1,15 @@
+(04/14/2017 11:56:09) Information [Stmgr] "HPU T10-J25 -- Low Pressure."
+(04/14/2017 11:56:09) Information [Stmgr] "HSM T9-J28A -- Low Pressure."
+(04/14/2017 11:56:11) Information [Stmgr] "HPU T10-J25 -- High Pressure."
+(04/14/2017 11:56:12) Information [Stmgr] "HSM T9-J28A -- High Pressure."
+(04/14/2017 11:56:35) Information [Stmgr] "Manual command enabled: Ch 1 Displacement"
+(04/14/2017 12:06:17) Information [Stmgr] "Manual command disabled: Ch 1 Displacement"
+(04/14/2017 12:06:25) Information [MPT Runtime] "Procedure Beginning: Rutz - Monotonic tension.000"
+(04/14/2017 12:06:25) Information [Stmgr] "Running test"
+(04/14/2017 12:06:25) Information [MPT Runtime] "Running"
+(04/14/2017 12:08:21) Information [MPT Runtime] "Entering Stopped"
+(04/14/2017 12:08:21) Information [Stmgr] "Stopped test"
+(04/14/2017 12:08:22) Information [MPT Runtime] "Stopped
+ Running Time:  00:01:57 
+ Channel Counters:
+    Ch 1 -          0  Cycles"
