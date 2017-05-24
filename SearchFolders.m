@@ -7,99 +7,105 @@ clear all;  % clear all variables
 close all;  % close all figures
 
 %% See if there's a 'Plots' folder. If not, create it
+
 if exist('Plots') == 0
     mkdir 'Plots';  % Make directory
 end
 
 %% Find all folders that match the following format
-dataFolderInfo = dir('*-*');    % Look for directory with - in name
+% dataFolderInfo = dir('*-*');    % Look for directory with - in name
 %dataFolderInfo = dir('R*');    % Look for directory starting with R
 
 % initialize count of plots as 0
 count = 0;
 
+directories = [dir('*-*'); dir('R*')];
+
 %% Main loop - Iterate through each folder found above
-for i = 1:size(dataFolderInfo)
-    folder = dataFolderInfo(i).name;    % Get folder name
-    
-    cd(strcat('.\', folder));           % Change working directory to be inside folder
-    
-    dataFile = fopen('specimen.dat');   % Open the data file
-    
-    
-    if dataFile ~= -1   % If theres a file named specimen.dat in the folder
-        
-        for line = 1:5  % Read the first five lines (not currently using)
-            lineText = fgetl(dataFile);
-            %disp(lineText);
-        end
+for j = 1:size(directories)
+    dataFolderInfo = directories(j,1);
+    for i = 1:size(dataFolderInfo)
+        folder = dataFolderInfo(i).name;    % Get folder name
 
-        theData = zeros(1,3);   % Initialize 1x3 array of zero's
+        cd(strcat('.\', folder));           % Change working directory to be inside folder
 
-        row = 1;    % Start at the first DATA row
+        dataFile = fopen('specimen.dat');   % Open the data file
 
-        % While the end of the file is not yet reached, repeat this loop
-        while (~feof(dataFile))
-            dataLine = fgetl(dataFile); % Read a line in the file
+        if dataFile ~= -1   % If theres a file named specimen.dat in the folder
 
-            if length(dataLine) ~= 0    % If the line isn't empty
-                % Split the string up whenever a space is seen
-                stringArray = strsplit(dataLine, ' ');
-
-                % Store each dimension (x,y,z) in our data array
-                for col = 1:3
-                    theData(row,col) = str2num(stringArray{col});   % fgetl reads data as strings so we have to convert to a number
-                end  
-                row = row + 1;
-            else % The line is empty...throw away the next 3 lines, they're junk
-                for i = 1:3
-                    fgetl(dataFile);
-                end
+            for line = 1:5  % Read the first five lines (not currently using)
+                lineText = fgetl(dataFile);
+                %disp(lineText);
             end
-        end    
 
-        % Prints the status in the command window
-        disp(strcat(folder, ' done...'));
-        
-        % Close all open files (really just 1 open at a time)
-        fclose('all');
+            theData = zeros(1,3);   % Initialize 1x3 array of zero's
 
-        % Get the first and second columns for plotting
-        x = theData(:,1); % Time (s)
-        y = theData(:,2); % Force in pounds
+            row = 1;    % Start at the first DATA row
 
-        maxForce = max(theData(:,2));   % Get the maximum force in the array
-        
-        % If max. force is > 1000 it's in pounds; convert to kips
-        if (maxForce > 1000);
-            y = y / 1000; % Force in kips
+            % While the end of the file is not yet reached, repeat this loop
+            while (~feof(dataFile))
+                dataLine = fgetl(dataFile); % Read a line in the file
+
+                if length(dataLine) ~= 0    % If the line isn't empty
+                    % Split the string up whenever a space is seen
+                    stringArray = strsplit(dataLine, ' ');
+
+                    % Store each dimension (x,y,z) in our data array
+                    for col = 1:3
+                        theData(row,col) = str2num(stringArray{col});   % fgetl reads data as strings so we have to convert to a number
+                    end  
+                    row = row + 1;
+                else % The line is empty...throw away the next 3 lines, they're junk
+                    for i = 1:3
+                        fgetl(dataFile);
+                    end
+                end
+            end    
+
+            % Prints the status in the command window
+            disp(strcat(folder, ' done...'));
+
+            % Close all open files (really just 1 open at a time)
+            fclose('all');
+
+            % Get the first and second columns for plotting
+            x = theData(:,1); % Time (s)
+            y = theData(:,2); % Force in pounds
+
+            maxForce = max(theData(:,2));   % Get the maximum force in the array
+
+            % If max. force is > 1000 it's in pounds; convert to kips
+            if (maxForce > 1000);
+                y = y / 1000; % Force in kips
+                maxForce = maxForce / 1000;
+            end
+
+            %% Do the plotting
+            f = figure; % New figure handle
+            plot(x,y);
+            grid on;
+            dim = [.60 .55 0.3 0.3];
+            str = ['Max. Tension = ', num2str(sprintf('%.2f',maxForce)), ' k'];
+            annotation('textbox',dim,'String',str,'FitBoxToText','on');
+            xlim([0 100]);  % X axis limits
+            ylim([0 14]);   % Y axis limits
+            title({['Test ',folder],'Load vs. Time - Monotonic Tension'});
+            xlabel('Time [s]');
+            ylabel('Load [k]');
+
+            % Increment plot count
+            count = count + 1;
+
+            % Save the figure in Plots folder then go back to base directory
+            cd('.\..\Plots');
+            saveas(f, strcat(folder,'_plot'), 'jpeg');
+        else
+            disp(strcat(folder, ' has no data file...skipping...'));
         end
 
-        % Do the plotting
-        f = figure; % New figure handle
-        plot(x,y); % Divide force by 1000 for kips
-        grid on;
-        dim = [0.2 0.5 0.3 0.3];
-        str = ['Max. Tension = ', maxForce];
-        annotation('textbox',dim,'String',str,'FitBoxToText','on');
-        xlim([0 100]);  % X axis limits
-        ylim([0 15]);   % X axis limits
-        title({['Test ',folder],'Load vs. Time - Monotonic Tension'});
-        xlabel('Time [s]');
-        ylabel('Load [k]');
-        
-        % Increment plot count
-        count = count + 1;
-        
-        % Save the figure in Plots folder then go back to base directory
-        cd('.\..\Plots');
-        saveas(f, strcat(folder,'_plot'), 'jpeg');
-    else
-        disp(strcat(folder, ' has no data file...skipping...'));
+        % Go back to base directory
+        cd('.\..');
     end
-    
-    % Go back to base directory
-    cd('.\..');
 end
 
 % Close all figures
